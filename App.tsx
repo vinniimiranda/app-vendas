@@ -17,6 +17,22 @@ export default function App() {
         900: '#003F5E',
       },
     },
+    components: {
+      Input: {
+        variants: {
+          outline: {
+            _focus: {
+              borderColor: 'primary.500',
+              bg: 'transparent',
+            },
+            _hover: {
+              borderColor: 'primary.500',
+              bg: 'transparent',
+            },
+          },
+        },
+      },
+    },
   });
 
   return (

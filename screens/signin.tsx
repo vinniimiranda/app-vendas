@@ -42,15 +42,14 @@ export function SignIn() {
             render={({ field: { onChange, onBlur, value } }) => (
               <Input
                 InputLeftElement={<Icon as={MaterialCommunityIcons} name="account" size={5} mx={2} />}
-                variant="outline"
                 onBlur={onBlur}
-                placeholder="Seu usuario"
+                placeholder="Digite seu usuario"
                 onChangeText={(val) => onChange(val)}
                 value={value}
               />
             )}
             name="userName"
-            rules={{ required: 'Usuário é obrigatório', minLength: 3 }}
+            rules={{ required: 'Campo obrigatório', minLength: 3 }}
             defaultValue=""
           />
           <FormControl.ErrorMessage>{errors.userName?.message}</FormControl.ErrorMessage>
@@ -62,16 +61,15 @@ export function SignIn() {
             render={({ field: { onChange, onBlur, value } }) => (
               <Input
                 InputLeftElement={<Icon as={MaterialCommunityIcons} name="lock" size={5} mx={2} />}
-                variant="outline"
                 secureTextEntry
                 onBlur={onBlur}
-                placeholder="Sua senha"
+                placeholder="Digite sua senha"
                 onChangeText={(val) => onChange(val)}
                 value={value}
               />
             )}
             name="password"
-            rules={{ required: 'Senha é obrigatório', minLength: 3 }}
+            rules={{ required: 'Campo obrigatório', minLength: 3 }}
             defaultValue=""
           />
           <FormControl.ErrorMessage>{errors.password?.message}</FormControl.ErrorMessage>
