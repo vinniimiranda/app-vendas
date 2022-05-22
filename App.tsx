@@ -5,12 +5,13 @@ import {
   Rubik_600SemiBold,
   Rubik_700Bold,
 } from '@expo-google-fonts/rubik';
+import { NavigationContainer } from '@react-navigation/native';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { extendTheme, NativeBaseProvider } from 'native-base';
 import { useCallback, useEffect, useState } from 'react';
 import { View } from 'react-native';
-import { SignIn } from './screens/signin';
+import { Main } from './routes';
 
 SplashScreen.preventAutoHideAsync()
   .then((result) => console.log(`SplashScreen.preventAutoHideAsync() succeeded: ${result}`))
@@ -116,9 +117,11 @@ export default function App() {
   });
 
   return (
-    <View onLayout={onLayoutRootView} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <NativeBaseProvider theme={theme}>
-        <SignIn />
+        <NavigationContainer>
+          <Main />
+        </NavigationContainer>
       </NativeBaseProvider>
     </View>
   );
