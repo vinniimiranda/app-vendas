@@ -1,4 +1,5 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons/';
+import { useNavigation } from '@react-navigation/native';
 import { Button, Center, FormControl, Heading, Icon, Image, Input, VStack } from 'native-base';
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -11,11 +12,14 @@ export function SignIn() {
   } = useForm();
   const [isLoading, setIsLoading] = useState(false);
 
+  const navigation = useNavigation<any>();
+
   const onSubmit = (data) => {
     setIsLoading(true);
     console.log('submiting with ', data);
     setTimeout(() => {
       setIsLoading(false);
+      navigation.navigate('App');
     }, 5000);
   };
   return (
