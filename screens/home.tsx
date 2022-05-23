@@ -7,7 +7,7 @@ export function Home() {
       <HStack space={2} justifyContent="center">
         <Icon as={MaterialCommunityIcons} name="account" size={'lg'} color={'primary.500'} />
         <Heading size={'md'} fontWeight="medium" color={'primary.500'}>
-          CPD
+          Leo Fernandes
         </Heading>
       </HStack>
       <VStack width={'full'} my={4}>
