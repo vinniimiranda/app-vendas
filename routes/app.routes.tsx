@@ -2,6 +2,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons/';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Icon } from 'native-base';
 import { Home } from '../screens/home';
+import { Map } from '../screens/map';
 
 const Drawer = createDrawerNavigator();
 
@@ -46,7 +47,7 @@ export function AppRoutes() {
       />
       <Drawer.Screen
         name="Maps"
-        component={Home}
+        component={Map}
         options={{
           drawerLabel: 'Mapa',
           headerTitle: 'Mapa',
