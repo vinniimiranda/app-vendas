@@ -1,11 +1,32 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons/';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Icon } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
+import { Box, Icon } from 'native-base';
+import { useEffect } from 'react';
 import { Home } from '../screens/home';
 import { Map } from '../screens/map';
 import { SearchCustomer } from '../screens/search-customer';
 
 const Drawer = createDrawerNavigator();
+
+const Search = () => {
+  return <Box style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>Consulta</Box>;
+};
+const Orders = () => {
+  return <Box style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>Consulta pedidos</Box>;
+};
+const Prospects = () => {
+  return <Box style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>Visitas</Box>;
+};
+
+const Exit = () => {
+  const navigation = useNavigation<any>();
+
+  useEffect(() => {
+    navigation.navigate('SignIn');
+  }, []);
+  return <Box style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>Sair</Box>;
+};
 
 export function AppRoutes() {
   return (
@@ -13,6 +34,7 @@ export function AppRoutes() {
       <Drawer.Screen
         name="Home"
         component={Home}
+        key="Home"
         options={{
           drawerLabel: 'Inicio',
           headerTitle: 'Inicio',
@@ -22,6 +44,7 @@ export function AppRoutes() {
       <Drawer.Screen
         name="Search"
         component={SearchCustomer}
+        key={'Search'}
         options={{
           drawerLabel: 'Consulta cliente',
           headerTitle: 'Consulta cliente',
@@ -30,7 +53,8 @@ export function AppRoutes() {
       />
       <Drawer.Screen
         name="Orders"
-        component={Home}
+        key={'Orders'}
+        component={Orders}
         options={{
           drawerLabel: 'Pedidos',
           headerTitle: 'Pedidos',
@@ -39,7 +63,8 @@ export function AppRoutes() {
       />
       <Drawer.Screen
         name="Prospects"
-        component={Home}
+        key={'Prospects'}
+        component={Prospects}
         options={{
           drawerLabel: 'Visitas',
           headerTitle: 'Visitas',
@@ -48,6 +73,7 @@ export function AppRoutes() {
       />
       <Drawer.Screen
         name="Maps"
+        key={'Maps'}
         component={Map}
         options={{
           drawerLabel: 'Mapa',
@@ -57,7 +83,8 @@ export function AppRoutes() {
       />
       <Drawer.Screen
         name="Exit"
-        component={Home}
+        key={'Exit'}
+        component={Exit}
         options={{
           drawerLabel: 'Sair',
           headerTitle: '',
