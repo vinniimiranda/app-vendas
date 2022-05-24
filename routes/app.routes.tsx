@@ -5,6 +5,7 @@ import { Box, Icon } from 'native-base';
 import { useEffect } from 'react';
 import { Home } from '../screens/home';
 import { Map } from '../screens/map';
+import { SearchCustomer } from '../screens/search-customer';
 
 const Drawer = createDrawerNavigator();
 
@@ -42,8 +43,8 @@ export function AppRoutes() {
       />
       <Drawer.Screen
         name="Search"
+        component={SearchCustomer}
         key={'Search'}
-        component={Search}
         options={{
           drawerLabel: 'Consulta cliente',
           headerTitle: 'Consulta cliente',
